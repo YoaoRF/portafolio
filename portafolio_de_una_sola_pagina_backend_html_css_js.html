@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio | Yoao Rodriguez Frias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --bg: #0a0d14;
+      --fg: #e6f3ee;
+      --muted: #8aa39b;
+      --neon: #00f5a0;
+      --cyan: #00d9ff;
+      --card: rgba(20, 25, 35, 0.7);
+      --border: rgba(0, 245, 160, 0.25);
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--fg);
+      background: radial-gradient(circle at top left, rgba(0, 217, 255, 0.08), transparent 60%),
+                  radial-gradient(circle at bottom right, rgba(0, 245, 160, 0.08), transparent 60%),
+                  var(--bg);
+      overflow-x: hidden;
+    }
+
+    header.nav {
+      position: sticky;
+      top: 0;
+      background: rgba(10, 13, 20, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 10;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      color: var(--neon);
+    }
+
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: conic-gradient(from 180deg, var(--neon), var(--cyan), var(--neon));
+      box-shadow: 0 0 15px var(--neon);
+      animation: spin 8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .nav-links a {
+      color: var(--fg);
+      margin-left: 16px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--neon);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 32px;
+    }
+
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:40px;margin-top:20px}
+@media(max-width:820px){.hero{grid-template-columns:1fr;gap:18px}}
+.hero .btn{margin-top:12px}
+
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.2rem;
+      color: var(--neon);
+    }
+
+    .btn {
+      background: linear-gradient(90deg, var(--neon), var(--cyan));
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px var(--neon);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-top: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 217, 255, 0.1);
+      color: var(--fg);
+      padding: 10px 16px;
+      border-radius: 50px;
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      font-size: 14px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .badge:hover {
+      background: linear-gradient(90deg, var(--neon), var(--cyan));
+      color: #000;
+      transform: scale(1.05) rotate(-2deg);
+      box-shadow: 0 0 15px var(--cyan);
+    }
+
+    .badge i {
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 32px;
+      color: var(--muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 40px;
+      background: linear-gradient(180deg, rgba(0,245,160,.06), rgba(0,217,255,.06));
+    }
+    .footer-inner{max-width:1100px;margin:0 auto}
+    .social{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:12px 0 6px}
+    .social a{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);color:var(--fg);text-decoration:none;transition:transform .25s ease, box-shadow .25s ease}
+    .social a:hover{transform:translateY(-3px);box-shadow:0 0 18px rgba(0,245,160,.25)}
+  .project-grid{display:grid;grid-template-columns:1fr;gap:22px;margin-top:12px}
+    @media(min-width:760px){.project-grid{grid-template-columns:1fr 1fr}}
+    .p-card{position:relative;border-radius:16px;background:rgba(15,25,40,.6);border:1px solid rgba(0,140,255,.25);box-shadow:0 10px 24px rgba(0,0,0,.45);padding:0;overflow:hidden;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease}
+    .p-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.5);border-color:rgba(0,180,255,.5)}
+    .p-top{display:flex;align-items:center;gap:12px;padding:18px;background:linear-gradient(135deg, rgba(0,160,255,.35), rgba(0,120,255,.18));border-bottom:1px solid rgba(255,255,255,.06)}
+    .p-top .icon{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;background:rgba(0,150,255,.25);box-shadow:inset 0 0 18px rgba(0,210,255,.25)}
+    .p-body{padding:18px}
+    .p-title{margin:0;font-weight:800;color:#bfe8ff}
+    .p-desc{margin:8px 0 10px;color:var(--muted)}
+    .p-tags{display:flex;flex-wrap:wrap;gap:8px}
+    .p-tag{font-size:12px;padding:5px 9px;border-radius:999px;border:1px solid rgba(0,160,255,.35);background:rgba(0,120,255,.1)}
+    /* typing effect */
+    .typing{font-family:'Orbitron',sans-serif;color:var(--neon)}
+    .cursor{display:inline-block;width:10px;background:transparent;margin-left:4px;border-left:3px solid var(--neon);animation:blink 1s steps(2) infinite}
+    @keyframes blink{50%{border-color:transparent}}
+  .avatar{position:relative}
+    .avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .avatar label{position:absolute;inset:0;display:grid;place-items:center}
+  .project-grid{display:grid;grid-template-columns:1fr;gap:28px;margin-top:12px}
+    @media(min-width:760px){.project-grid{grid-template-columns:1fr 1fr}}
+    .p-card{position:relative;border-radius:16px;background:rgba(15,25,40,.6);border:1px solid rgba(0,140,255,.25);box-shadow:0 10px 24px rgba(0,0,0,.45);padding:0;overflow:hidden;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease}
+    .p-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.5);border-color:rgba(0,180,255,.5)}
+    .p-top{display:flex;align-items:center;gap:12px;padding:18px;background:linear-gradient(135deg, rgba(0,160,255,.35), rgba(0,120,255,.18));border-bottom:1px solid rgba(255,255,255,.06)}
+    .p-top .icon{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;background:rgba(0,150,255,.25);box-shadow:inset 0 0 18px rgba(0,210,255,.25)}
+    .p-body{padding:18px}
+    .p-title{margin:0;font-weight:800;color:#bfe8ff}
+    .p-desc{margin:8px 0 10px;color:var(--muted)}
+    .p-tags{display:flex;flex-wrap:wrap;gap:8px}
+    .p-tag{font-size:12px;padding:5px 9px;border-radius:999px;border:1px solid rgba(0,160,255,.35);background:rgba(0,120,255,.1)}
+    /* typing effect */
+    .typing{font-family:'Orbitron',sans-serif;color:var(--neon)}
+    .cursor{display:inline-block;width:10px;background:transparent;margin-left:4px;border-left:3px solid var(--neon);animation:blink 1s steps(2) infinite}
+    @keyframes blink{50%{border-color:transparent}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand"><div class="logo"></div></div>
+      <nav class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#perfil">Perfil</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="inicio" class="hero">
+      <div class="hero-left">
+        <h1 class="typing">Yoao Rodriguez Frias — <span id="type"></span><span class="cursor"></span></h1>
+        <p>Construyo APIs limpias y escalables con Python/Django REST, integrando servicios web con clientes móviles y web. Me enfoco en rendimiento, seguridad y DX.</p>
+        <button class="btn" onclick="document.querySelector('#proyectos').scrollIntoView({behavior:'smooth'})">Ver proyectos</button>
+      </div>
+      <div class="hero-right" style="display:flex;gap:12px;align-items:center">
+        <div class="avatar" style="width:180px;height:180px;border-radius:20px;border:2px dashed var(--neon);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;">
+          <input type="file" id="file" accept="image/*" style="display:none"/>
+          <label for="file" id="uploadLabel" style="cursor:pointer;color:var(--muted);text-align:center">Sube tu foto<br>(PNG/JPG)</label>
+          <img id="avatarImg" style="display:none;width:100%;height:100%;object-fit:cover"/>
+        </div>
+        <button class="btn secondary" id="changePhoto" type="button" style="white-space:nowrap;background:transparent;color:var(--neon);border:1px solid var(--neon)">Cambiar foto</button>
+      </div>
+    </section>
+
+    <section id="perfil" class="card">
+      <h2>Competencias</h2>
+      <div class="badges">
+        <span class="badge"><i data-lucide="code"></i> Python</span>
+        <span class="badge"><i data-lucide="server"></i> Django REST Framework</span>
+        <span class="badge"><i data-lucide="database"></i> SQL</span>
+        <span class="badge"><i data-lucide="smartphone"></i> Flutter</span>
+        <span class="badge"><i data-lucide="cpu"></i> Swift / SwiftUI</span>
+        <span class="badge"><i data-lucide="globe"></i> Integración Web</span>
+        <span class="badge"><i data-lucide="git-branch"></i> Node.js / JS</span>
+        <span class="badge"><i data-lucide="workflow"></i> Agile / Waterfall</span>
+        <span class="badge"><i data-lucide="message-square"></i> Inglés Técnico</span>
+      </div>
+    </section>
+
+    <section id="proyectos" class="card">
+      <h2>Proyectos Académicos</h2>
+      <div class="project-grid">
+        <article class="p-card">
+          <div class="p-top"><div class="icon"><i data-lucide="rocket"></i></div><h3 class="p-title">ChessPeru — Torneos de Ajedrez</h3></div>
+          <div class="p-body">
+            <p class="p-desc">Plataforma web para registro y participación en torneos, con módulos de tutoriales. Optimización del backend y manejo de sesiones.</p>
+            <div class="p-tags"><span class="p-tag">Laravel</span><span class="p-tag">PHP</span><span class="p-tag">HTML</span><span class="p-tag">JS</span></div>
+          </div>
+        </article>
+        <article class="p-card">
+          <div class="p-top"><div class="icon"><i data-lucide="library"></i></div><h3 class="p-title">VaulTEC — Repositorio de Proyectos</h3></div>
+          <div class="p-body">
+            <p class="p-desc">Sistema web/móvil para almacenar y gestionar proyectos finales. Roles, búsqueda y panel administrativo.</p>
+            <div class="p-tags"><span class="p-tag">Django</span><span class="p-tag">React</span><span class="p-tag">Flutter</span></div>
+          </div>
+        </article>
+        <article class="p-card">
+          <div class="p-top"><div class="icon"><i data-lucide="map-pin"></i></div><h3 class="p-title">ServiciosPe — Índice de Negocios</h3></div>
+          <div class="p-body">
+            <p class="p-desc">API con geolocalización, autenticación y validaciones para registrar negocios locales. Integración con cliente web y móvil.</p>
+            <div class="p-tags"><span class="p-tag">Python</span><span class="p-tag">Django REST</span><span class="p-tag">Next.js</span></div>
+          </div>
+        </article>
+        <article class="p-card">
+          <div class="p-top"><div class="icon"><i data-lucide="activity"></i></div><h3 class="p-title">Eduplus — Sistema de Gestión Escolar</h3></div>
+          <div class="p-body">
+            <p class="p-desc">Sistema web/móvil para gestionar estudiantes, calificaciones y horarios. Optimización del backend y manejo de roles administrativos.</p>
+            <div class="p-tags"><span class="p-tag">Django</span><span class="p-tag">MySQL</span><span class="p-tag">Python</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <div class="footer-inner">
+      <div class="social">
+        <a href="mailto:yoao.rodriguez@tecsup.edu.pe"><i data-lucide="mail"></i> yoao.rodriguez@tecsup.edu.pe</a>
+        <a href="https://www.linkedin.com/in/yoao-rodriguez-frias-104396386/" target="_blank" rel="noopener"><i data-lucide="linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/YoaoRF?tab=repositories" target="_blank" rel="noopener"><i data-lucide="github"></i> GitHub</a>
+      </div>
+      <p>© <span id="year"></span> Yoao Rodriguez Frias · Backend • Hecho con HTML + CSS + JS</p>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Preview / cambio de imagen
+    const fileInput = document.getElementById('file');
+    const changeBtn = document.getElementById('changePhoto');
+    const avatarImg = document.getElementById('avatarImg');
+    const avatarBox = document.querySelector('.avatar');
+    const uploadLabel = document.getElementById('uploadLabel');
+
+    const applyPreview = (file) => {
+      const url = URL.createObjectURL(file);
+      avatarImg.src = url;
+      avatarImg.style.display = 'block';
+      if (uploadLabel) uploadLabel.style.display = 'none';
+      if (avatarBox) avatarBox.style.border = 'none';
+    };
+
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (file) applyPreview(file);
+    });
+
+    if (changeBtn) {
+      changeBtn.addEventListener('click', () => {
+        // Permite re-seleccionar la misma imagen
+        fileInput.value = '';
+        fileInput.click();
+      });
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
